@@ -54,7 +54,7 @@ const Pricing = () => {
   ];
 
   return (
-    <SectionLayaout styles="lg:h-screen flex flex-col gap-10 bg-btn-primary-bg py-20 lg:px-10 xl:px-20">
+    <SectionLayaout styles="flex flex-col gap-10 bg-btn-primary-bg py-20 lg:px-10 xl:px-20">
       <div className="flex flex-col gap-2">
         <h2 className="text-3xl text-text-light font-medium text-center text-pretty md:text-4xl lg:text-5xl">
           Elige el plan perfecto para ti

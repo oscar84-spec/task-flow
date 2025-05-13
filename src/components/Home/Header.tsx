@@ -5,7 +5,7 @@ import { Button } from "../index";
 
 const Header = () => {
   return (
-    <header className="flex justify-between items-center w-full h-14 px-5 bg-header-bg relative lg:px-10 xl:px-20">
+    <header className="flex justify-between items-center w-full h-14 px-5 bg-header-bg fixed md:relative lg:px-10 xl:px-20">
       <div className="md:flex md:gap-5 md:items-center">
         <Logo
           stylesIcon="size-7 text-icon-color"
