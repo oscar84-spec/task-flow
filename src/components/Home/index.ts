@@ -4,3 +4,4 @@ export { default as Sidebar } from "./Sidebar";
 export { default as Navbar } from "./Navbar";
 export { default as Presentation } from "./Presentation";
 export { default as Features } from "./Features";
+export { default as Pricing } from "./Pricing";
