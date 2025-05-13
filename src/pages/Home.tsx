@@ -1,4 +1,4 @@
-import { Header, Presentation } from "../components/Home";
+import { Header, Presentation, Features } from "../components/Home";
 import { useSidebarStore } from "../store/slices/sliceSidebar";
 
 const Home = () => {
@@ -11,6 +11,7 @@ const Home = () => {
     >
       <Header />
       <Presentation />
+      <Features />
     </main>
   );
 };

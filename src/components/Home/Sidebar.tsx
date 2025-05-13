@@ -5,8 +5,6 @@ import { useSidebarStore } from "../../store/slices/sliceSidebar";
 const Sidebar = () => {
   const { isOpen } = useSidebarStore();
 
-  console.log(isOpen);
-
   return (
     <aside
       className={`w-full h-[calc(100vh-56px)] flex flex-col items-center gap-10 bg-sidebar-bg absolute top-14 left-0
