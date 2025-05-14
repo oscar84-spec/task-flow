@@ -3,11 +3,11 @@ import { Button } from "../index";
 import { useSidebarStore } from "../../store/slices/sliceSidebar";
 
 const Sidebar = () => {
-  const { isOpen } = useSidebarStore();
+  const { isOpen, handleToggleSidebar } = useSidebarStore();
 
   return (
     <aside
-      className={`w-full h-[calc(100vh-56px)] flex flex-col items-center gap-10 bg-sidebar-bg absolute top-14 left-0
+      className={`z-50 w-full h-[calc(100vh-56px)] flex flex-col items-center gap-10 bg-sidebar-bg absolute top-14 left-0
     ${
       isOpen
         ? "translate-x-0 opacity-100 transition-all ease-in-out duration-1000"
@@ -30,12 +30,15 @@ const Sidebar = () => {
       </nav>
       <div className="flex flex-col gap-5">
         <Link to="/login">
-          <Button type="button">Iniciar sesión</Button>
+          <Button type="button" onClick={handleToggleSidebar}>
+            Iniciar sesión
+          </Button>
         </Link>
         <Link to="/register">
           <Button
             type="button"
             styles="bg-btn-secondary-bg text-btn-secondary-text hover:bg-btn-secondary-hover"
+            onClick={handleToggleSidebar}
           >
             Registrarse
           </Button>

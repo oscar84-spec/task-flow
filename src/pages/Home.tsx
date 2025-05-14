@@ -11,7 +11,7 @@ const Home = () => {
   const { isOpen } = useSidebarStore();
   return (
     <main
-      className={`w-full h-screen bg-page-bg relative overflow-x-hidden ${
+      className={`z-0 w-full h-screen bg-page-bg relative overflow-x-hidden ${
         isOpen ? "overflow-y-hidden" : ""
       } `}
     >

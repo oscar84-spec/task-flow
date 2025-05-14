@@ -6,3 +6,5 @@ export { default as ListIcon } from "./ListIcon";
 export { default as LogOut } from "./LogOut";
 export { default as MenuIcon } from "./MenuIcon";
 export { default as TeamIcon } from "./TeamIcon";
+export { default as EyeIcon } from "./EyeIcon";
+export { default as EyeSlashIcon } from "./EyeSlashIcon";
