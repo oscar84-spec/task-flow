@@ -1,12 +1,16 @@
 type FormProps = {
   children: React.ReactNode;
   title: string;
+  onClick: () => void;
 };
 
-const Form = ({ children, title }: FormProps) => {
+const Form = ({ children, title, onClick }: FormProps) => {
   return (
     <section className="z-0 w-full h-[calc(100vh-56px)] py-5 flex justify-center">
-      <form className="w-full h-max md:max-w-md md:shadow-xl p-5 mt-10 rounded-md">
+      <form
+        className="w-full h-max md:max-w-md md:shadow-xl p-5 mt-10 rounded-md"
+        onSubmit={onClick}
+      >
         <legend className="text-2xl text-center text-text-color font-medium">
           {title}
         </legend>
