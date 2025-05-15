@@ -8,3 +8,4 @@ export { default as MenuIcon } from "./MenuIcon";
 export { default as TeamIcon } from "./TeamIcon";
 export { default as EyeIcon } from "./EyeIcon";
 export { default as EyeSlashIcon } from "./EyeSlashIcon";
+export { default as AddIcon } from "./AddIcon";

@@ -20,4 +20,33 @@
   --color-sidebar-text: #f9fafb;
 
   --color-text-light: #f4f4f5;
+
+  /* Colores para el Dashboard */
+
+  /* Header */
+  --color-dashboard-header-bg: #1e1b3a;
+  --color-dashboard-header-text: #ffffff;
+  --color-dashboard-header-icon: #ff5ec4;
+
+  /* General */
+  --color-dashboard-page-bg: #15131f;
+  --color-dashboard-text-color: #eaeaea;
+
+  /* Botones */
+  --color-dashboard-btn-primary-bg: #3b82f6;
+  --color-dashboard-btn-primary-text: #ffffff;
+  --color-dashboard-btn-primary-hover: #2563eb;
+
+  --color-dashboard-btn-secondary-bg: #ff5ec4;
+  --color-dashboard-btn-secondary-text: #ffffff;
+  --color-dashboard-btn-secondary-hover: #e645ae;
+
+  /* Sidebar */
+  --color-dashboard-sidebar-bg: #11101a;
+  --color-dashboard-sidebar-text: #cfcfd1;
+  --color-dashboard-sidebar-active-bg: #2c1e40;
+
+  /* Listas y Tarjetas */
+  --color-dashboard-list-bg: #1f1c2d;
+  --color-dashboard-card-bg: #27233a;
 }

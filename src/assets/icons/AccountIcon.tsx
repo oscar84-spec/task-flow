@@ -1,7 +1,11 @@
 import { FaUser } from "react-icons/fa";
 
-const AccountIcon = () => {
-  return <FaUser />;
+type AccountIconProps = {
+  styles?: string;
+};
+
+const AccountIcon = ({ styles }: AccountIconProps) => {
+  return <FaUser className={styles} />;
 };
 
 export default AccountIcon;
