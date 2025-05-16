@@ -1,9 +1,10 @@
-import { HeaderDash } from "../components/Dashboard";
+import { HeaderDash, AddTabModal } from "../components/Dashboard";
 
 const Dashboard = () => {
   return (
-    <main className="w-full h-screen bg-page-bg ">
+    <main className="w-full h-screen bg-dashboard-page-bg ">
       <HeaderDash />
+      <AddTabModal />
     </main>
   );
 };

@@ -5,11 +5,12 @@ import { Button } from "../index";
 import { LogOut } from "../../assets/icons";
 
 const MenuAccount = () => {
-  const { isOpenAccountMenu } = useShowAccountMenuStore();
+  const { isOpenAccountMenu, handleToggleShowAccountMenu } =
+    useShowAccountMenuStore();
 
   return (
     <div
-      className={`menu w-full h-max p-5 absolute top-14 right-0 flex flex-col gap-2 justify-center items-center rounded-md shadow-lg z-40 md:w-72 md:right-5 lg:right-10 xl:right-20 ${
+      className={`menu w-full h-max p-5 absolute top-14 right-0 flex flex-col gap-2 justify-center items-center rounded-md shadow-lg z-40 md:w-72 md:right-5 lg:right-10 xl:right-20 bg-page-bg ${
         isOpenAccountMenu ? "show" : ""
       } `}
       id="account"
@@ -32,6 +33,7 @@ const MenuAccount = () => {
         <Button
           type="button"
           styles="w-full flex justify-center items-center gap-3"
+          onClick={handleToggleShowAccountMenu}
         >
           Cerrar sesión <LogOut />
         </Button>
