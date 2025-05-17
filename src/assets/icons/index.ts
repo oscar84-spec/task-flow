@@ -9,3 +9,7 @@ export { default as TeamIcon } from "./TeamIcon";
 export { default as EyeIcon } from "./EyeIcon";
 export { default as EyeSlashIcon } from "./EyeSlashIcon";
 export { default as AddIcon } from "./AddIcon";
+export { default as DashboardIcon } from "./DashboardIcon";
+export { default as StarIcon } from "./StarIcon";
+export { default as ArrowRightIcon } from "./ArrowRightIcon";
+export { default as ArrowDownIcon } from "./ArrowDownIcon";

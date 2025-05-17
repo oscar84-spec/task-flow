@@ -44,7 +44,7 @@
   /* Sidebar */
   --color-dashboard-sidebar-bg: #2c283c;
   --color-dashboard-sidebar-text: #cfcfd1;
-  --color-dashboard-sidebar-active-bg: #2c1e40;
+  --color-dashboard-sidebar-hover-bg: #2c1e40;
 
   /* Listas y Tarjetas */
   --color-dashboard-list-bg: #1f1c2d;

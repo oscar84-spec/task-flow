@@ -1,7 +1,11 @@
 import { LuUsers } from "react-icons/lu";
 
-const TeamIcon = () => {
-  return <LuUsers className="size-7 text-icon-color" />;
+type TeamIconProps = {
+  styles?: string;
+};
+
+const TeamIcon = ({ styles }: TeamIconProps) => {
+  return <LuUsers className={styles} />;
 };
 
 export default TeamIcon;

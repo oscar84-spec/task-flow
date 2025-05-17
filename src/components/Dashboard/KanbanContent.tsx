@@ -38,7 +38,7 @@ const KanbanContent = ({ areas }: KanbanContentProps) => {
             Agregar tarjeta
           </Button>
         </div>
-        <Button type="button" styles="w-full shrink-0 md:w-72">
+        <Button type="button" styles="w-full shrink-0 md:w-68">
           Agregar lista
         </Button>
       </section>
