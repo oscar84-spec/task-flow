@@ -7,12 +7,15 @@ import {
   AddIcon,
 } from "../../assets/icons";
 import { Button } from "../index";
+import { useShowModalStore } from "../../store/slices/sliceShowModal";
 
 type SidebarDashboardProps = {
   areas: string;
 };
 
 const Sidebar = ({ areas }: SidebarDashboardProps) => {
+  const { handleToggleModal } = useShowModalStore();
+
   return (
     <aside
       className={`hidden w-full bg-dashboard-sidebar-bg rounded-md p-2 md:flex flex-col gap-5 ${areas}`}
@@ -77,6 +80,7 @@ const Sidebar = ({ areas }: SidebarDashboardProps) => {
           <Button
             type="button"
             styles="w-full h-10 pl-2 bg-transparent flex items-center justify-start gap-2 hover:bg-dashboard-sidebar-hover-bg"
+            onClick={handleToggleModal}
           >
             <AddIcon styles="size-5 text-icon-color" />
             <span className="text-sm text-dashboard-text-color">
