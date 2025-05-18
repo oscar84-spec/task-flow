@@ -2,6 +2,7 @@ import { Button, Badge } from "../index";
 import { DeleteIcon } from "../../assets/icons";
 import "../../assets/styles/kanban.css";
 import { useShowAddListStore } from "../../store/slices/sliceShowAddList";
+import { useShowAddCardStore } from "../../store/slices/sliceShowAddCard";
 
 type KanbanContentProps = {
   areas?: string;
@@ -9,6 +10,7 @@ type KanbanContentProps = {
 
 const KanbanContent = ({ areas }: KanbanContentProps) => {
   const { handleToggleAddList } = useShowAddListStore();
+  const { handleToggleAddCard } = useShowAddCardStore();
   return (
     <section
       className={`w-full h-full bg-dashboard-kanban-bg rounded-md p-2 flex flex-col gap-2 overflow-hidden ${areas} `}
@@ -49,7 +51,11 @@ const KanbanContent = ({ areas }: KanbanContentProps) => {
               </p>
             </div>
           </div>
-          <Button type="button" styles="w-full button-add">
+          <Button
+            type="button"
+            styles="w-full button-add"
+            onClick={handleToggleAddCard}
+          >
             Agregar tarjeta
           </Button>
         </div>
