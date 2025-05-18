@@ -13,3 +13,4 @@ export { default as DashboardIcon } from "./DashboardIcon";
 export { default as StarIcon } from "./StarIcon";
 export { default as ArrowRightIcon } from "./ArrowRightIcon";
 export { default as ArrowDownIcon } from "./ArrowDownIcon";
+export { default as DeleteIcon } from "./DeleteIcon";

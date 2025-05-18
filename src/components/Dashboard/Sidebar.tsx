@@ -17,7 +17,7 @@ const Sidebar = ({ areas }: SidebarDashboardProps) => {
     <aside
       className={`hidden w-full bg-dashboard-sidebar-bg rounded-md p-2 md:flex flex-col gap-5 ${areas}`}
     >
-      <div className="w-full flex items-center gap-2">
+      <div className="w-full flex items-center gap-2 pointer-events-none">
         <DashboardIcon styles="size-5 text-icon-color" />
         <span className="text-lg text-dashboard-text-color">Tableros</span>
       </div>
