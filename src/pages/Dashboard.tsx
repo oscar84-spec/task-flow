@@ -3,6 +3,7 @@ import {
   AddTabModal,
   KanbanContent,
   SidebarDashboard,
+  AddListModal,
 } from "../components/Dashboard";
 
 import "../assets/styles/dashboard.css";
@@ -12,6 +13,7 @@ const Dashboard = () => {
     <main className="w-full h-screen bg-dashboard-page-bg ">
       <HeaderDash />
       <AddTabModal />
+      <AddListModal />
       <section className="w-full h-[calc(100vh-56px)] p-5 dashboard">
         <SidebarDashboard areas="sidebar" />
         <KanbanContent areas="main" />
