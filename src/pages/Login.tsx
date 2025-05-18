@@ -53,9 +53,17 @@ const Login = () => {
             </span>
           )}
           {isVisible ? (
-            <EyeSlashIcon styles="absolute top-1/2 right-3 -translate-y-1/2 text-icon-color cursor-pointer" />
+            <EyeSlashIcon
+              styles={`absolute top-1/2 right-3 -translate-y-1/2 text-icon-color cursor-pointer ${
+                errors.password ? "top-[30%] " : ""
+              } `}
+            />
           ) : (
-            <EyeIcon styles="absolute top-1/2 right-3 -translate-y-1/2 text-icon-color cursor-pointer" />
+            <EyeIcon
+              styles={`absolute top-1/2 right-3 -translate-y-1/2 text-icon-color cursor-pointer ${
+                errors.password ? "top-[30%] " : ""
+              } `}
+            />
           )}
         </div>
         <div className="w-full flex flex-col gap-2">
