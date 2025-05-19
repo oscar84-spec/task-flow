@@ -4,6 +4,8 @@ import { EyeIcon, EyeSlashIcon } from "../assets/icons";
 import { useShowPasswordStore } from "../store/slices/sliceShowPassword";
 import { useForm } from "react-hook-form";
 import { validationsRegister } from "../validations/register";
+import { useNavigate } from "react-router-dom";
+import { createUser } from "../services/users";
 
 type ValidationForm = {
   name: {
@@ -62,6 +64,7 @@ type ValidationForm = {
 
 const Register = () => {
   const { isVisible } = useShowPasswordStore();
+  const navigate = useNavigate();
 
   const {
     register,
@@ -70,9 +73,14 @@ const Register = () => {
     reset,
   } = useForm<ValidationForm>();
 
-  const onSubmit = (data: ValidationForm) => {
-    console.log(data);
-    reset();
+  const onSubmit = async (data: ValidationForm) => {
+    const res = await createUser(data);
+    if (!res) {
+      alert("Error al registrar usuario");
+    } else {
+      navigate("/dashboard");
+      reset();
+    }
   };
 
   return (
