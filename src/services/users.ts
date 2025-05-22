@@ -55,6 +55,37 @@ type ValidationForm = {
   };
 };
 
+type Login = {
+  email: string;
+  password: string;
+};
+
+// Registro de usuarios - ✔
 export const createUser = async (data: ValidationForm) => {
   return await api.post("/register", data);
+};
+
+// Verificar sesión de jwt - ✔
+export const verifySession = async () => {
+  try {
+    const res = await api.get("/dashboard", {
+      withCredentials: true,
+    });
+    return res.data;
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+};
+
+// Inicio de sesión
+
+export const loginUser = async (data: Login) => {
+  try {
+    return await api.post("/login", data, {
+      withCredentials: true,
+    });
+  } catch (error) {
+    console.error(error);
+  }
 };

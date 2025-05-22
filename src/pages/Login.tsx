@@ -4,6 +4,8 @@ import { EyeIcon, EyeSlashIcon } from "../assets/icons";
 import { useShowPasswordStore } from "../store/slices/sliceShowPassword";
 import { useForm } from "react-hook-form";
 import { validationsLogin } from "../validations/login";
+import { loginUser } from "../services/users";
+import { useNavigate } from "react-router-dom";
 
 type FormLogin = {
   email: string;
@@ -12,6 +14,7 @@ type FormLogin = {
 
 const Login = () => {
   const { isVisible } = useShowPasswordStore();
+  const navigate = useNavigate();
 
   const {
     register,
@@ -20,9 +23,19 @@ const Login = () => {
     reset,
   } = useForm<FormLogin>();
 
-  const onSubmit = (data: FormLogin) => {
-    console.log(data);
-    reset();
+  const onSubmit = async (data: FormLogin) => {
+    try {
+      const res = await loginUser(data);
+      if (!res) {
+        alert("Error al iniciar sesión");
+      } else {
+        navigate("/dashboard");
+        reset();
+      }
+    } catch (error) {
+      console.error(error);
+      reset();
+    }
   };
 
   return (
