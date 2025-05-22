@@ -55,7 +55,7 @@ const MenuAccount = () => {
       id="account"
     >
       <span className="w-10 h-10 p-2 bg-amber-700 rounded-full text-stone-50 text-center">
-        M
+        {user.name.charAt(0)}
       </span>
       <hr className="border-1 border-stone-300 w-full" />
       <div className="flex flex-col gap-2 ">
