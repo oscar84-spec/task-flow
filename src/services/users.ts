@@ -90,7 +90,7 @@ export const loginUser = async (data: Login) => {
   }
 };
 
-// Cerrar sesión
+// Cerrar sesión - ✔
 
 export const logoutUser = async () => {
   try {
@@ -101,6 +101,17 @@ export const logoutUser = async () => {
         withCredentials: true,
       }
     );
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+// Obtener perfil de usuario - ✔
+export const getDataUser = async () => {
+  try {
+    return await api.get("/dashboard", {
+      withCredentials: true,
+    });
   } catch (error) {
     console.error(error);
   }

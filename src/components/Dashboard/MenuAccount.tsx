@@ -5,10 +5,15 @@ import { Button } from "../index";
 import { LogOut } from "../../assets/icons";
 import { logoutUser } from "../../services/users";
 import { useNavigate } from "react-router-dom";
+import { useUserDataStore } from "../../store/slices/sliceUserData";
+import { useEffect, useState } from "react";
+import { getDataUser } from "../../services/users";
 
 const MenuAccount = () => {
   const { isOpenAccountMenu, handleToggleShowAccountMenu } =
     useShowAccountMenuStore();
+
+  const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
 
@@ -19,6 +24,28 @@ const MenuAccount = () => {
       navigate("/");
     }
   };
+
+  const { user, setUser } = useUserDataStore();
+
+  useEffect(() => {
+    const getUser = async () => {
+      try {
+        const res = await getDataUser();
+        setUser(res?.data);
+        setLoading(false);
+      } catch (error) {
+        console.error(error);
+        setLoading(false);
+      }
+    };
+
+    getUser();
+  }, [setUser]);
+
+  if (loading) return <p>Cargando...</p>;
+  if (!user) return <p>No tienes acceso. Inicia sesión.</p>;
+
+  console.log(user);
 
   return (
     <div
@@ -33,10 +60,10 @@ const MenuAccount = () => {
       <hr className="border-1 border-stone-300 w-full" />
       <div className="flex flex-col gap-2 ">
         <span className="text-md text-text-color/50 font-medium">
-          Oscar Hernández
+          {user.name} {user.lastName}
         </span>
         <span className="text-md text-text-color/50 font-medium">
-          ohdz202@gmail.com
+          {user.email}
         </span>
       </div>
       <hr className="border-1 border-stone-300 w-full" />
