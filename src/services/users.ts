@@ -78,13 +78,29 @@ export const verifySession = async () => {
   }
 };
 
-// Inicio de sesión
+// Inicio de sesión - ✔
 
 export const loginUser = async (data: Login) => {
   try {
     return await api.post("/login", data, {
       withCredentials: true,
     });
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+// Cerrar sesión
+
+export const logoutUser = async () => {
+  try {
+    return await api.post(
+      "/logout",
+      {},
+      {
+        withCredentials: true,
+      }
+    );
   } catch (error) {
     console.error(error);
   }

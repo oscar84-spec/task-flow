@@ -3,10 +3,22 @@ import { useShowAccountMenuStore } from "../../store/slices/sliceShowAccountMenu
 import "../../assets/styles/header-dash.css";
 import { Button } from "../index";
 import { LogOut } from "../../assets/icons";
+import { logoutUser } from "../../services/users";
+import { useNavigate } from "react-router-dom";
 
 const MenuAccount = () => {
   const { isOpenAccountMenu, handleToggleShowAccountMenu } =
     useShowAccountMenuStore();
+
+  const navigate = useNavigate();
+
+  const handleLogOut = async () => {
+    const res = await logoutUser();
+    if (res) {
+      handleToggleShowAccountMenu();
+      navigate("/");
+    }
+  };
 
   return (
     <div
@@ -33,7 +45,7 @@ const MenuAccount = () => {
         <Button
           type="button"
           styles="w-full flex justify-center items-center gap-3"
-          onClick={handleToggleShowAccountMenu}
+          onClick={handleLogOut}
         >
           Cerrar sesión <LogOut />
         </Button>
