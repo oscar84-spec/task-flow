@@ -6,10 +6,12 @@ import { useForm } from "react-hook-form";
 import { createBoard } from "../../services/kanban";
 import type { Board } from "../../types/BoardType";
 import { useUserDataStore } from "../../store/slices/sliceUserData";
+import { useGetBoardByIdStore } from "../../store/slices/sliceGetBoardById";
 
 const AddTabModal = () => {
   const { isOpenModal, handleToggleModal } = useShowModalStore();
   const { user } = useUserDataStore();
+  const { addBoard } = useGetBoardByIdStore();
 
   const {
     register,
@@ -29,6 +31,7 @@ const AddTabModal = () => {
     try {
       const res = await createBoard(boardData);
       if (res) {
+        addBoard(res.data);
         handleToggleModal();
         reset();
       }

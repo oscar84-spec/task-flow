@@ -2,18 +2,22 @@ import { useShowAccountMenuStore } from "../../store/slices/sliceShowAccountMenu
 
 import "../../assets/styles/header-dash.css";
 import { Button } from "../index";
-import { LogOut } from "../../assets/icons";
+import { LogOut, ArrowDownIcon, ArrowRightIcon } from "../../assets/icons";
 import { logoutUser } from "../../services/users";
 import { useNavigate } from "react-router-dom";
 import { useUserDataStore } from "../../store/slices/sliceUserData";
 import { useEffect, useState } from "react";
 import { getDataUser } from "../../services/users";
+import { useGetBoardByIdStore } from "../../store/slices/sliceGetBoardById";
 
 const MenuAccount = () => {
   const { isOpenAccountMenu, handleToggleShowAccountMenu } =
     useShowAccountMenuStore();
 
   const [loading, setLoading] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const { board } = useGetBoardByIdStore();
 
   const navigate = useNavigate();
 
@@ -64,6 +68,39 @@ const MenuAccount = () => {
           {user.email}
         </span>
       </div>
+      <hr className="border-1 border-stone-300 w-full" />
+
+      <Button
+        type="button"
+        styles="w-full h-10 pl-2 bg-transparent flex items-center justify-start gap-2 hover:bg-stone-200"
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        {isOpen ? (
+          <ArrowDownIcon styles="size-3 text-icon-color" />
+        ) : (
+          <ArrowRightIcon styles="size-3 text-icon-color" />
+        )}
+        <span className="text-sm text-text-color">Tus tableros</span>
+      </Button>
+      {isOpen && (
+        <div
+          className={`w-full pl-4 lg:pl-7 
+           ${board?.length ?? 0 ? "h-max max-h-28 overflow-y-auto" : "h-0"} `}
+        >
+          {loading && (
+            <span className="text-sm text-text-color">Cargando...</span>
+          )}
+          {board?.map((b) => (
+            <Button
+              type="button"
+              styles="w-full h-10 pl-2 bg-transparent flex items-center justify-start gap-2 hover:bg-stone-200"
+              key={b._id}
+            >
+              <span className="text-sm text-text-color">{b.title}</span>
+            </Button>
+          ))}
+        </div>
+      )}
       <hr className="border-1 border-stone-300 w-full" />
 
       <div className="flex flex-col gap-2 w-full">
